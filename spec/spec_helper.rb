@@ -1,7 +1,12 @@
 require 'simplecov'
 require 'simplecov-console'
 require 'webmock/rspec'
+
+require './spec/helpers'
+
 johnlennon = JSON.parse(File.read("./json_examples/john_lennon.json"))
+hugobergmann = JSON.parse(File.read("./json_examples/hugo_bergmann.json"))
+
 
 WebMock.disable_net_connect!(allow_localhost: true)
 
@@ -13,20 +18,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
 SimpleCov.start
 
 RSpec.configure do |config|
-
-  config.before(:each) do
-    stub_request(:get, /en.wikipedia.org/).with(
-        headers: {
-          'Accept'=>'*/*', 'User-Agent'=>'Ruby'
-        }
-        ).to_return(
-          status: 200,
-          body: JSON.generate(johnlennon),
-          headers: {"Content-Type"=> "application/json"}
-        )
-
-  end
-
+  config.include API_Helper
 
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

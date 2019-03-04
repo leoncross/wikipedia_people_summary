@@ -8,4 +8,6 @@ Approach:
 - birth date and age for living
 - birth date for dead
 
+- i learnt how inconsistent data is stored on wiki; after reviewing lots of pages; no consistency
+
 stub api by saving data as local file
