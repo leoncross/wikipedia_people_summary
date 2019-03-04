@@ -16,3 +16,6 @@ stub api by saving data as local file
 went to wiki document pages to review suggested style format
 
 spent way too long expecting there to be an easier way. Once i realised there isnt (or one that i found, I resorted to finding a more 'bruit force' attempt of this challenge)
+
+
+spouse - refered to as '{{marriage|[[' even in civil partnerships

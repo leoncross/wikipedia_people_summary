@@ -3,7 +3,8 @@ require 'httparty'
 class WikiAPI
 
   def callAPI(name)
-    url = 'https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&rvsection=0&titles=' + name + '&format=json'
+    url = 'https://en.wikipedia.org/w/api.php?action=query&prop=cirrusbuilddoc&titles=' + name + '&format=json'
+    # 'https://en.wikipedia.org/w/api.php?action=query&prop=cirrusbuilddoc&titles=' + name + '&format=json'
     response = HTTParty.get(url)
     @result = response.parsed_response
   end
@@ -21,6 +22,7 @@ class WikiAPI
   end
 
   def day_of_death
+    @death_day = nil
     if @result.to_s.split(/{{Death date and age/).last[1..10].gsub(/\D/, '').to_i > 0
       @death_day = @result.to_s.split(/{{Death date and age/).last[1..10]
     end
@@ -30,6 +32,14 @@ class WikiAPI
     @death_day = @death_day[0..8] if @death_day[-1] == "|"
   end
 
-
+  def spouce_list
+    @spouces = []
+    count = @result.to_s.scan(/{{marriage(.+?)\]/)
+    count.each_with_index do |_spouce, index|
+      result = count[index].to_s.scan(/[ a-zA-Z0-9]+/)
+      @spouces << result[0]
+    end
+   @spouces
+  end
 
 end

@@ -64,4 +64,18 @@ describe WikiAPI do
       expect(wiki_api.format_deathday).to eq '1980|12|8'
     end
   end
+
+  context 'spouce_list' do
+    it 'returns single spouce' do
+      mock_API_call(sethrogen)
+      wiki_api.callAPI('John_Lennon')
+      expect(wiki_api.spouce_list).to eq ["Lauren Miller"]
+
+    end
+    it 'returns list of multiple spouces' do
+      mock_API_call(johnlennon)
+      wiki_api.callAPI('John_Lennon')
+      expect(wiki_api.spouce_list).to eq ["Cynthia Lennon", "Yoko Ono"]
+    end
+  end
 end
