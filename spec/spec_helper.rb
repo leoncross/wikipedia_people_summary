@@ -18,7 +18,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
 SimpleCov.start
 
 RSpec.configure do |config|
-  config.include API_Helper
+  config.include ApiHelper
 
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
