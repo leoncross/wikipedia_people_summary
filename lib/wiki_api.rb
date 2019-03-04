@@ -3,9 +3,8 @@ require 'httparty'
 # communicates and manages the data from the API
 class WikiAPI
   def call_api(name)
-    url = 'https://en.wikipedia.org/w/api.php?action=query&prop=\
-          cirrusbuilddoc&titles=' + name + '&format=json'
-    response = HTTParty.get(url)
+    url = 'https://en.wikipedia.org/w/api.php?action=query&prop=cirrusbuilddoc&titles='
+    response = HTTParty.get(url + name + '&format=json')
     @result = response.parsed_response
   end
 
@@ -37,5 +36,12 @@ class WikiAPI
       @spouces << result[0]
     end
     @spouces
+  end
+
+  def summary
+    start = 'opening_text'
+    finish = 'auxiliary_text'
+    @main_summary = @result.to_s[/#{start}(.*?)#{finish}/m, 1]
+    @main_summary = @main_summary.gsub!(/[^-–.,!?A-Za-z0-9 ]/, '')[0...-2]
   end
 end
