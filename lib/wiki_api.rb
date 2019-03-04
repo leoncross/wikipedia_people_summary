@@ -21,16 +21,9 @@ class WikiAPI
   end
 
   def day_of_death
-
+    if @result.to_s.split(/{{Death date and age/).last[1..10].gsub(/\D/, '').to_i > 0
+      @death_day = @result.to_s.split(/{{Death date and age/).last[1..10]
+    end
   end
 
-# {{Death date and age|1980|12|8|1940|
-
 end
-
-data = WikiAPI.new
-data.callAPI('Hugo_Bergmann')
-p data.day_of_birth
-
-data.callAPI('John_Lennon')
-p data.day_of_birth

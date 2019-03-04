@@ -16,7 +16,7 @@ describe WikiAPI do
     end
   end
 
-  context 'extracts birthday data from api call' do
+  context 'day_of_birth' do
     it 'single digit month' do
       mock_API_call(johnlennon)
       wiki_api.callAPI('John_Lennon')
@@ -40,6 +40,14 @@ describe WikiAPI do
       wiki_api.callAPI('John_Lennon')
       wiki_api.day_of_birth
       expect(wiki_api.format_birthday).to eq '1940|10|9'
+    end
+  end
+
+  context 'day_of_death' do
+    it 'returns the day of the celebries death' do
+      mock_API_call(johnlennon)
+      wiki_api.callAPI('John_Lennon')
+      expect(wiki_api.day_of_death).to eq '1980|12|8|'
     end
   end
 end
