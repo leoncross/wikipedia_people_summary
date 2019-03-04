@@ -28,7 +28,7 @@ class WikiAPI
     @death_day = @death_day[0..8] if @death_day[-1] == '|'
   end
 
-  def spouce_list
+  def spouse_list
     @spouces = []
     count = @result.to_s.scan(/{{marriage(.+?)\]/)
     count.each_with_index do |_spouce, index|
