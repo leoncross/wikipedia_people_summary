@@ -26,4 +26,8 @@ class WikiAPI
     end
   end
 
+  def format_deathday
+    @death_day = @death_day[0..8] if @death_day[-1] == "|"
+  end
+
 end

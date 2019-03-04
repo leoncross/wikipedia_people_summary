@@ -49,5 +49,19 @@ describe WikiAPI do
       wiki_api.callAPI('John_Lennon')
       expect(wiki_api.day_of_death).to eq '1980|12|8|'
     end
+    it 'returns nil if no death_day' do
+      mock_API_call(sethrogen)
+      wiki_api.callAPI('Seth_Rogen')
+      expect(wiki_api.day_of_death).to eq nil
+    end
+  end
+
+  context 'format_deathday' do
+    it 'removes trailing | if it exists' do
+      mock_API_call(johnlennon)
+      wiki_api.callAPI('John_Lennon')
+      wiki_api.day_of_death
+      expect(wiki_api.format_deathday).to eq '1980|12|8'
+    end
   end
 end
