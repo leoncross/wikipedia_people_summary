@@ -11,3 +11,6 @@ Approach:
 - i learnt how inconsistent data is stored on wiki; after reviewing lots of pages; no consistency
 
 stub api by saving data as local file
+
+
+went to wiki document pages to review suggested style format

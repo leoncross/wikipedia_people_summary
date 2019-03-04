@@ -20,4 +20,17 @@ class WikiAPI
     @birth_day = @birth_day[0..8] if @birth_day[-1] == "|"
   end
 
+  def day_of_death
+
+  end
+
+# {{Death date and age|1980|12|8|1940|
+
 end
+
+data = WikiAPI.new
+data.callAPI('Hugo_Bergmann')
+p data.day_of_birth
+
+data.callAPI('John_Lennon')
+p data.day_of_birth
