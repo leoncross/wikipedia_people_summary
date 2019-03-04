@@ -1,7 +1,7 @@
 require 'simplecov'
 require 'simplecov-console'
 require 'webmock/rspec'
-johnlennon = JSON.parse(File.read("./spec/example_data.json"))
+johnlennon = JSON.parse(File.read("./json_examples/john_lennon.json"))
 
 WebMock.disable_net_connect!(allow_localhost: true)
 
