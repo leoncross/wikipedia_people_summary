@@ -32,14 +32,14 @@ class WikiAPI
   end
 
   def spouse_list
-    @spouces = []
+    @spouses = []
     count = @result.to_s.scan(/{{marriage(.+?)\]/)
     count.each_with_index do |_spouce, index|
       result = count[index].to_s.scan(/[ a-zA-Z0-9]+/)
-      @spouces << result[0]
+      @spouses << result[0]
     end
-    return @spouces = 'N/A' if @spouces.empty?
-    @spouces = @spouces.join(', ')
+    return @spouses = 'N/A' if @spouses.empty?
+    @spouses = @spouses.join(', ')
   end
 
   def summary
