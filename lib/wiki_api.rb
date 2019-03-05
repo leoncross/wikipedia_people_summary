@@ -36,7 +36,7 @@ class WikiAPI
       result = count[index].to_s.scan(/[ a-zA-Z0-9]+/)
       @spouces << result[0]
     end
-    @spouces
+    @spouces = @spouces.join(', ')
   end
 
   def summary

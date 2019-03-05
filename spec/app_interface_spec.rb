@@ -6,7 +6,7 @@ describe AppInterface do
   context 'introduce' do
     it 'introduces user and gives instructions' do
       allow(interface).to receive(:gets).and_return("celebrity")
-      expect(interface).to receive(:puts).with("Welcome, please enter the name of the celebrity you would like to search!", "At any time, type 'exit' to exit out of the app", "Accepted search format: 'Firstname Lastname' (e.g., John Lennon)")
+      expect(interface).to receive(:puts).with("Welcome, please enter the name of the celebrity you would like to search!", "At any time, type \"exit\" to exit out of the app", "Accepted search format: \"Firstname Lastname\" (e.g., John Lennon)")
       expect(interface.introduce).to eq "celebrity"
     end
   end
@@ -23,13 +23,7 @@ describe AppInterface do
   context 'print_data' do
     it 'prints the variables' do
       interface.setup_variables('celebrity','birthdate', 'deathdate', 'spouse_list', 'article_summary')
-      expect(interface).to receive(:puts).with(
-          "Your searched celebrity details are as follows:",
-          "Birth date: birthdate",
-          "Death date: deathdate",
-          "Spouse: spouse_list",
-          "Article Summary: article_summary"
-        )
+      expect(interface).to receive(:puts).with("\e[0;31;49mYour searched celebrity details are as follows:\e[0m", "\e[0;31;49mBirth date: \e[0mbirthdate", "\e[0;31;49mDeath date: \e[0mdeathdate", "\e[0;31;49mSpouse: \e[0mspouse_list", "\e[0;31;49mArticle Summary: \e[0marticle_summary")
       interface.print_data
     end
   end

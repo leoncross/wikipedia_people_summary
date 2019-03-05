@@ -28,6 +28,6 @@ class AppController
     @celebrity = search_term[0].capitalize + '_' + search_term[1].capitalize
   end
 end
-#
+# #
 # app = AppController.new
 # app.celebrity_search

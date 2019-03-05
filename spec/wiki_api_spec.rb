@@ -68,12 +68,12 @@ describe WikiAPI do
     it 'returns single spouce' do
       mock_api_call(sethrogen)
       wiki_api.call_api('Seth_Rogen')
-      expect(wiki_api.spouse_list).to eq ['Lauren Miller']
+      expect(wiki_api.spouse_list).to eq 'Lauren Miller'
     end
     it 'returns list of multiple spouces' do
       mock_api_call(johnlennon)
       wiki_api.call_api('John_Lennon')
-      expect(wiki_api.spouse_list).to eq ['Cynthia Lennon', 'Yoko Ono']
+      expect(wiki_api.spouse_list).to eq 'Cynthia Lennon, Yoko Ono'
     end
   end
 
