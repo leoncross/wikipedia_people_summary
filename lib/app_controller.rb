@@ -9,12 +9,16 @@ class AppController
   end
 
   def celebrity_search_runner
-    @celebrity = clean_search_result(@app_interface.introduce)
-    wiki_api_process
-    @app_interface.setup_variables(
-      @celebrity, @birth_day, @death_day, @spouse_list, @article_summary
-    )
-    @app_interface.print_data
+    begin
+      @celebrity = clean_search_result(@app_interface.introduce)
+      wiki_api_process
+      @app_interface.setup_variables(
+        @celebrity, @birth_day, @death_day, @spouse_list, @article_summary
+      )
+      @app_interface.print_data
+    rescue StandardError
+      @app_interface.error_display
+    end
   end
 
   def wiki_api_process
@@ -32,6 +36,3 @@ class AppController
     @celebrity = search_term[0].capitalize + '_' + search_term[1].capitalize
   end
 end
-# #
-# app = AppController.new
-# app.celebrity_search_runner

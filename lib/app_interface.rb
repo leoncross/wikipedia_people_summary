@@ -27,4 +27,8 @@ class AppInterface
           'Spouse: '.red + @spouse_list,
           'Article Summary: '.red + @article_summary
   end
+
+  def error_display
+    puts "No data found; please try again".red
+  end
 end
