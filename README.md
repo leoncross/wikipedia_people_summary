@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/43062443/53802567-01a8bf00-3f3a-11e9-9cda-89a98bef4be8.png)
+
 # Wikipedia People Summary:
 
 1. [Task](#task)
