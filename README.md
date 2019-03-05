@@ -4,6 +4,7 @@
 The given task was as follows:
 ```
 As a pop culture enthusiast, I would like to get brief summaries of famous people so that I can learn about significant details of their lives.
+```
 
 ACCEPTANCE CRITERIA
 
@@ -15,8 +16,6 @@ The app outputs the values from the following fields:
 - Died (if this field exists)
 - Spouses (if this field exists)
 - The main summary of the article
-
-```
 
 # My Approach:
 
@@ -49,7 +48,7 @@ On the note of my tests - I felt the best approach to mock the API call, would b
 
 ### Moving forward:
 
-If there was more time to this project, I would not have focused on string manipulation in such a hard-coded way. It doesn't feel smart, nor sustainable to develop such a programme in this format. For example; currently wikipedia treats all spouses as a 'marriage' - if they were to eventually split this up to include civil partnerships, this would break the code. (Side note - through this app, I learnt that there is a high level of styling/naming inconsistentcy on wikipedia!)
+If there was more time to this project, I would not have focused on string manipulation in such a hard-coded way. It doesn't feel smart, nor sustainable to develop such a programme in this format. For example; currently wikipedia treats all spouses as a 'marriage' - if they were to eventually split this up to include civil partnerships, this would break the code. (Side note - through this app, I learnt that there is a high level of styling/naming inconsistency on wikipedia!)
 
 Because of this, I would instead focus on developing a more complex parser that can account for much more variation in code, and then have the entire JSON be converted into a more traditional hash, so it could be callable in a more legible/cleaner way (i.e., {wiki_api_response}.date_of_birth // 01/01/1900)
 
@@ -70,7 +69,7 @@ HTTParty
 In the command line, type the following:
 
 ```
-git clone git@github.com:leoncross/wikipedia_people_summary
+git clone https://github.com/leoncross/wikipedia_people_summary.git
 cd wikipedia_people_summary
 bundle install
 ```
@@ -104,7 +103,7 @@ $ John Lennon
 > Your searched celebrity details are as follows:
 > Birth date: 1940|10|9
 > Death date: 1980|12|8
-> Spouse: Cynthia Lennon, Yoko Ono
+> Spouse(s): Cynthia Lennon, Yoko Ono
 > Article Summary: John Winston Ono Lennon MBE 9 October 1940–8 December 1980 was an English singer, songwriter, and peace activist who co-founded the Beatles, the most commercially successful band in the history of popular music. He and fellow member Paul McCartney formed a much-celebrated songwriting partnership. Along with George Harrison and Ringo Starr, the group would ascend to worldwide fame during the 1960s. After the group disbanded in 1970, Lennon pursued a solo career and started the band Plastic Ono Band with his second wife Yoko Ono. He was born as John Winston Lennon in Liverpool, where he became involved in the skiffle craze as a teenager. In 1957, he formed his first band, the Quarrymen, which evolved into the Beatles in 1960. Lennon began to record as a solo artist before the bands break-up in April 1970 two of those songs were Give Peace a Chance and Instant Karma! Lennon subsequently produced albums that included John LennonPlastic Ono Band and Imagine, and songs such as Working Class Hero, Imagine and Happy Xmas War Is Over. After he married Yoko Ono in 1969, he added Ono as one of his middle names. Lennon disengaged himself from the music business in 1975 to raise his infant son Sean, but re-emerged with Ono in 1980 with the album Double Fantasy. He was shot and killed in the archway of his Manhattan apartment building three weeks after the album was released. Lennon revealed a rebellious nature and acerbic wit in his music, writing, drawings, on film and in interviews. Controversial through his political and peace activism, he moved from London to Manhattan in 1971, where his criticism of the Vietnam War resulted in a lengthy attempt by the Nixon administration to deport him. Some of his songs were adopted as anthems by the anti-war movement and the larger counterculture. By 2012, Lennons solo album sales in the United States had exceeded 14 million units. He had 25 number-one singles on the US Billboard Hot 100 chart as a writer, co-writer, or performer. In 2002, Lennon was voted eighth in a BBC poll of the 100 Greatest Britons and in 2008, Rolling Stone ranked him the fifth-greatest singer of all time. In 1987, he was posthumously inducted into the Songwriters Hall of Fame. Lennon was twice posthumously inducted into the Rock and Roll Hall of Fame first in 1988 as a member of the Beatles and again in 1994 as a solo artist.
 
 ```

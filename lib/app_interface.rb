@@ -6,6 +6,7 @@ class AppInterface
   attr_reader :celebrity, :birthdate, :deathdate, :spouse_list, :article_summary
 
   def introduce
+    system 'clear'
     puts  'Welcome, please enter the name of the celebrity you would like to search!',
           'Accepted search format: "Firstname Lastname" (e.g., John Lennon)'
     gets.chomp
@@ -23,7 +24,7 @@ class AppInterface
     puts  'Your searched celebrity details are as follows:'.red,
           'Birth date: '.red + @birthdate,
           'Death date: '.red + @deathdate,
-          'Spouse: '.red + @spouse_list,
+          'Spouse(s): '.red + @spouse_list,
           'Article Summary: '.red + @article_summary
   end
 
