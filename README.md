@@ -3,8 +3,8 @@
 # Task:
 The given task was as follows:
 ```
-As a pop culture enthusiast,\
-I would like to get brief summaries of famous people\
+As a pop culture enthusiast,
+I would like to get brief summaries of famous people
 so that I can learn about significant details of their lives.
 ```
 
