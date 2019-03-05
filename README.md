@@ -34,8 +34,8 @@ The app outputs the values from the following fields:
 When I received the challenge, I quickly identified 2 key criteria:
   1. the app should be run through the command line
   2. communicate with an API
-For both of these reasons, I decided to build the app in Ruby; this has the following benefits:
-  1. Ruby is synchronous language, which means it runs from top-to-bottom. This allows for fast development of API apps, as there is no need for callback functions (such as in JavaScript)
+
+For both of these reasons, I decided to build the app in Ruby; this has the benefit of being a synchronous language, which means it runs from top-to-bottom. This allows for fast development of API apps, as there is no need for callback functions (such as in JavaScript). Further, Ruby has significant string-manipulation built-in capabilities.
 
 From here, I quickly went into reading as much as possible on the MediaWikipedia API documentation; having just finished an app in JS using APIs; I focused on identifying the route to information - what call do I need to make in order to get the exact information I want in return.
 
