@@ -1,7 +1,6 @@
 AllCops:
   Exclude:
-    - 'spec/spec_helper.rb'
-    - 'spec/wiki_api_spec.rb'
+    - 'spec/**'
 
 Metrics/LineLength:
   Max: 100

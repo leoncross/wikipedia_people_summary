@@ -6,9 +6,9 @@ class AppInterface
   attr_reader :celebrity, :birthdate, :deathdate, :spouse_list, :article_summary
 
   def introduce
-    puts "Welcome, please enter the name of the celebrity you would like to search!",
-          "At any time, type 'exit' to exit out of the app",
-          "Accepted search format: 'Firstname Lastname' (e.g., John Lennon)"
+    puts  'Welcome, please enter the name of the celebrity you would like to search!',
+          'At any time, type "exit" to exit out of the app',
+          'Accepted search format: "Firstname Lastname" (e.g., John Lennon)'
     gets.chomp
   end
 
@@ -21,11 +21,10 @@ class AppInterface
   end
 
   def print_data
-    puts "Your searched celebrity details are as follows:",
-     "Birth date: #{@birthdate}",
-     "Death date: #{@deathdate}",
-     "Spouse: #{@spouse_list}",
-     "Article Summary #{@deathdate}"
+    puts  'Your searched celebrity details are as follows:',
+          "Birth date: #{@birthdate}",
+          "Death date: #{@deathdate}",
+          "Spouse: #{@spouse_list}",
+          "Article Summary: #{@article_summary}"
   end
-
 end

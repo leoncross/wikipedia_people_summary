@@ -28,7 +28,7 @@ describe AppInterface do
           "Birth date: birthdate",
           "Death date: deathdate",
           "Spouse: spouse_list",
-          "Article Summary deathdate"
+          "Article Summary: article_summary"
         )
       interface.print_data
     end
