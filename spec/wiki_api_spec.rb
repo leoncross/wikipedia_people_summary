@@ -48,10 +48,10 @@ describe WikiAPI do
       wiki_api.call_api('John_Lennon')
       expect(wiki_api.day_of_death).to eq '1980|12|8|'
     end
-    it 'returns nil if no death_day' do
+    it 'returns "Still alive" if no death_day' do
       mock_api_call(sethrogen)
       wiki_api.call_api('Seth_Rogen')
-      expect(wiki_api.day_of_death).to eq nil
+      expect(wiki_api.day_of_death).to eq "Still alive"
     end
   end
 

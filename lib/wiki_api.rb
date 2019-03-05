@@ -15,17 +15,18 @@ class WikiAPI
   end
 
   def format_birthday
+    return @birth_day = @birth_day if @birth_day[-1] != '|'
     @birth_day = @birth_day[0..8] if @birth_day[-1] == '|'
   end
 
   def day_of_death
     return @death_day = @result.to_s.split(/{{Death date and age/).last[1..10] if
       @result.to_s.split(/{{Death date and age/).last[1..10].gsub(/\D/, '').to_i > 0
-    @death_day = nil
+    @death_day = 'Still alive'
   end
 
   def format_deathday
-    return if @death_day.nil?
+    return @death_day if @death_day == 'Still alive'
     @death_day = @death_day[0..8] if @death_day[-1] == '|'
   end
 
@@ -36,6 +37,7 @@ class WikiAPI
       result = count[index].to_s.scan(/[ a-zA-Z0-9]+/)
       @spouces << result[0]
     end
+    return @spouces = "N/A" if @spouces.length == 0
     @spouces = @spouces.join(', ')
   end
 
