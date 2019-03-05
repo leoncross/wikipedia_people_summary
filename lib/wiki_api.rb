@@ -24,11 +24,11 @@ class WikiAPI
   def day_of_death
     return @death_day = @result.to_s.split(/{{Death date and age/).last[1..10] if
       @result.to_s.split(/{{Death date and age/).last[1..10].gsub(/\D/, '').to_i > 0
-    @death_day = 'Still alive'
+    @death_day = 'N/A'
   end
 
   def format_deathday
-    @death_day == 'Still alive' ? return : @death_day = @death_day[0..8]
+    @death_day == 'N/A' ? @death_day : @death_day = @death_day[0..8]
   end
 
   def spouse_list
@@ -49,12 +49,3 @@ class WikiAPI
     @main_summary = @main_summary.gsub!(/[^-–.,!?A-Za-z0-9 ]/, '')[0...-2]
   end
 end
-#
-# wiki = WikiAPI.new
-# wiki.call_api('Michael_Jackson')
-# p wiki.day_of_birth
-# p wiki.format_birthday
-#
-# wiki.call_api('Seth_Rogen')
-# p wiki.day_of_birth
-# p wiki.format_birthday

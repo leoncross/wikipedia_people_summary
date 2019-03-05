@@ -51,7 +51,7 @@ describe WikiAPI do
     it 'returns "Still alive" if no death_day' do
       mock_api_call(sethrogen)
       wiki_api.call_api('Seth_Rogen')
-      expect(wiki_api.day_of_death).to eq "Still alive"
+      expect(wiki_api.day_of_death).to eq "N/A"
     end
   end
 

@@ -2,6 +2,8 @@ require 'simplecov'
 require 'simplecov-console'
 require 'webmock/rspec'
 
+WebMock.allow_net_connect!
+
 module ApiHelper
   def mock_api_call(name)
     stub_request(:get, /en.wikipedia.org/).with(

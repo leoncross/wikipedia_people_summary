@@ -7,9 +7,6 @@ require './spec/helpers'
 johnlennon = JSON.parse(File.read("./json_examples/john_lennon.json"))
 hugobergmann = JSON.parse(File.read("./json_examples/hugo_bergmann.json"))
 
-
-WebMock.disable_net_connect!(allow_localhost: true)
-
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
   [SimpleCov::Formatter::Console]
   # Want a nice code coverage website? Uncomment this next line!
