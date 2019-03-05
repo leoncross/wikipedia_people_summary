@@ -1,6 +1,14 @@
-# wikipedia_people_summary
+# Wikipedia People Summary:
 
-# Task:
+1. [Task](#task)
+2. [My Approach](#my_approach)
+3. [Technologies used](#technologies)
+4. [Installation](#installation)
+5. [How to run the tests](#how_to_run_tests)
+6. [How to run the app](#how_to_run_the_app)
+7. [Example of app](#example_of_app)
+
+# <a name="task">Task</a>:
 The given task was as follows:
 ```
 As a pop culture enthusiast,
@@ -19,7 +27,7 @@ The app outputs the values from the following fields:
 - Spouses (if this field exists)
 - The main summary of the article
 
-# My Approach:
+# <a name="my_approach">My Approach</a>:
 
 When I received the challenge, I quickly identified 2 key criteria:
   1. the app should be run through the command line
@@ -56,7 +64,7 @@ Because of this, I would instead focus on developing a more complex parser that 
 
 This would be one option; especially if the strict criteria remained to calling MediaWikipedia API; however, in my searches I came across DBpedia - https://wiki.dbpedia.org/. This would be called instead of the MediaWikipedia API, and does exactly as I outlined above - returns data in a more usable format.
 
-# Technologies:
+# <a name="technologies">Technologies used</a>:
 To achieve this challenge, I used the following technologies:
 ```
 Ruby
@@ -66,8 +74,8 @@ Rubocop
 Webmock
 HTTParty
 ```
+# <a name="installation">Installation</a>:
 
-# Installation
 In the command line, type the following:
 
 ```
@@ -76,7 +84,7 @@ cd wikipedia_people_summary
 bundle install
 ```
 
-# How to run the tests:
+# <a name="how_to_run_tests">How to run the tests</a>:
 In the command line, type the following:
 
 ```
@@ -84,16 +92,15 @@ rspec // this will show coverage reports, as well as run all the tests
 
 rubocop // this will run the linter
 ```
-# How to run the app:
 
+# <a name="how_to_run_the_app">How to run the app</a>:
 After cloning this repo, navigate to the root of the app and type:
 ```
 ruby app.rb
 ```
 This will produce some text telling explaining the format to enter your search.
 
-# Example of app:
-
+# <a name="example_of_app">Example of app</a>:
 ```
 $ ruby app.rb
 
