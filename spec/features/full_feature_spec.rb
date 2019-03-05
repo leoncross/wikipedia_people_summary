@@ -11,8 +11,7 @@ context 'full feature' do
     allow(interface).to receive(:gets).and_return('john lennon')
     expect(interface).to receive(:puts).with(
       'Welcome, please enter the name of the celebrity you would like to search!',
-      'At any time, type "exit" to exit out of the app',
-      'Accepted search format: "Firstname Lastname" (e.g., John Lennon)',
+      'Accepted search format: "Firstname Lastname" (e.g., John Lennon)'
     )
       expect(interface).to receive(:puts).with(
       "\e[0;31;49mYour searched celebrity details are as follows:\e[0m",
@@ -23,7 +22,7 @@ context 'full feature' do
     )
     app.celebrity_search_runner
   end
-  
+
   it 'no user found' do
     api = WikiAPI.new
     interface = AppInterface.new
@@ -31,8 +30,7 @@ context 'full feature' do
     allow(interface).to receive(:gets).and_return('adsf asdf')
     expect(interface).to receive(:puts).with(
       'Welcome, please enter the name of the celebrity you would like to search!',
-      'At any time, type "exit" to exit out of the app',
-      'Accepted search format: "Firstname Lastname" (e.g., John Lennon)',
+      'Accepted search format: "Firstname Lastname" (e.g., John Lennon)'
     )
       expect(interface).to receive(:puts).with(
       "\e[0;31;49mNo data found; please try again\e[0m"

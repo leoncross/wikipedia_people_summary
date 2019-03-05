@@ -6,7 +6,7 @@ describe AppInterface do
   context 'introduce' do
     it 'introduces user and gives instructions' do
       allow(interface).to receive(:gets).and_return("celebrity")
-      expect(interface).to receive(:puts).with("Welcome, please enter the name of the celebrity you would like to search!", "At any time, type \"exit\" to exit out of the app", "Accepted search format: \"Firstname Lastname\" (e.g., John Lennon)")
+      expect(interface).to receive(:puts).with("Welcome, please enter the name of the celebrity you would like to search!", "Accepted search format: \"Firstname Lastname\" (e.g., John Lennon)")
       expect(interface.introduce).to eq "celebrity"
     end
   end

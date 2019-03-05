@@ -7,7 +7,6 @@ class AppInterface
 
   def introduce
     puts  'Welcome, please enter the name of the celebrity you would like to search!',
-          'At any time, type "exit" to exit out of the app',
           'Accepted search format: "Firstname Lastname" (e.g., John Lennon)'
     gets.chomp
   end
@@ -29,6 +28,6 @@ class AppInterface
   end
 
   def error_display
-    puts "No data found; please try again".red
+    puts 'No data found; please try again'.red
   end
 end

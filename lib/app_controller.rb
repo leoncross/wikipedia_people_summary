@@ -1,7 +1,7 @@
 require_relative 'wiki_api'
 require_relative 'app_interface'
 
-# controlls the app, and passes data between wiki api and interface
+# controls the app, and passes data between wiki api and interface
 class AppController
   def initialize(wiki_api = WikiAPI.new, app_interface = AppInterface.new)
     @wiki_api = wiki_api
@@ -9,16 +9,14 @@ class AppController
   end
 
   def celebrity_search_runner
-    begin
-      @celebrity = clean_search_result(@app_interface.introduce)
-      wiki_api_process
-      @app_interface.setup_variables(
-        @celebrity, @birth_day, @death_day, @spouse_list, @article_summary
-      )
-      @app_interface.print_data
-    rescue StandardError
-      @app_interface.error_display
-    end
+    @celebrity = clean_search_result(@app_interface.introduce)
+    wiki_api_process
+    @app_interface.setup_variables(
+      @celebrity, @birth_day, @death_day, @spouse_list, @article_summary
+    )
+    @app_interface.print_data
+  rescue StandardError
+    @app_interface.error_display
   end
 
   def wiki_api_process
