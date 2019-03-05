@@ -22,9 +22,9 @@ class AppInterface
 
   def print_data
     puts  'Your searched celebrity details are as follows:'.red,
-          "Birth date: ".red + @birthdate,
-          "Death date: ".red + @deathdate,
-          "Spouse: ".red + @spouse_list,
-          "Article Summary: ".red + @article_summary
+          'Birth date: '.red + @birthdate,
+          'Death date: '.red + @deathdate,
+          'Spouse: '.red + @spouse_list,
+          'Article Summary: '.red + @article_summary
   end
 end

@@ -23,7 +23,7 @@ describe AppController do
       expect(mock_wiki_api).to receive(:summary)
       expect(mock_app_interface).to receive(:setup_variables)
       expect(mock_app_interface).to receive(:print_data)
-      controller.celebrity_search
+      controller.celebrity_search_runner
     end
   end
 end

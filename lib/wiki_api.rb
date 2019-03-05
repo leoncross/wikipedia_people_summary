@@ -9,9 +9,11 @@ class WikiAPI
   end
 
   def day_of_birth
-    return @birth_day = @result.to_s.split(/= {{Birth date/).last[1..10] if
-      @result.to_s.split(/= {{Birth date/).last[0..10].gsub(/\D/, '').to_i > 0
-    @birth_day = @result.to_s.split(/= {{birth date and age/).last[1..9]
+    @birth_day = if @result.to_s.split(/= {{birth date and age/).last[1] == "\""
+                   @result.to_s.split(/= {{Birth date/).last[1..10]
+                 else
+                   @result.to_s.split(/= {{birth date and age/).last[1..9]
+                 end
   end
 
   def format_birthday
@@ -26,8 +28,7 @@ class WikiAPI
   end
 
   def format_deathday
-    return @death_day if @death_day == 'Still alive'
-    @death_day = @death_day[0..8] if @death_day[-1] == '|'
+    @death_day == 'Still alive' ? return : @death_day = @death_day[0..8]
   end
 
   def spouse_list
@@ -37,7 +38,7 @@ class WikiAPI
       result = count[index].to_s.scan(/[ a-zA-Z0-9]+/)
       @spouces << result[0]
     end
-    return @spouces = "N/A" if @spouces.length == 0
+    return @spouces = 'N/A' if @spouces.empty?
     @spouces = @spouces.join(', ')
   end
 
@@ -48,3 +49,12 @@ class WikiAPI
     @main_summary = @main_summary.gsub!(/[^-–.,!?A-Za-z0-9 ]/, '')[0...-2]
   end
 end
+#
+# wiki = WikiAPI.new
+# wiki.call_api('Michael_Jackson')
+# p wiki.day_of_birth
+# p wiki.format_birthday
+#
+# wiki.call_api('Seth_Rogen')
+# p wiki.day_of_birth
+# p wiki.format_birthday
