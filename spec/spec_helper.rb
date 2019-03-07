@@ -1,11 +1,8 @@
 require 'simplecov'
 require 'simplecov-console'
 require 'webmock/rspec'
-
 require './spec/helpers'
 
-johnlennon = JSON.parse(File.read("./json_examples/john_lennon.json"))
-hugobergmann = JSON.parse(File.read("./json_examples/hugo_bergmann.json"))
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
   [SimpleCov::Formatter::Console]
